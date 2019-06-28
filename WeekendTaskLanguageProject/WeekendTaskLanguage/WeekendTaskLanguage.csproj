@@ -127,14 +127,44 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\AboutController.cs" />
+    <Compile Include="Controllers\BaseController.cs" />
     <Compile Include="Controllers\BlogController.cs" />
     <Compile Include="Controllers\ContactController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ServiceController.cs" />
     <Compile Include="Controllers\WorkController.cs" />
+    <Compile Include="DAL\TempContext.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201906281525211_create.cs" />
+    <Compile Include="Migrations\201906281525211_create.Designer.cs">
+      <DependentUpon>201906281525211_create.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201906281603264_createTable.cs" />
+    <Compile Include="Migrations\201906281603264_createTable.Designer.cs">
+      <DependentUpon>201906281603264_createTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201906281811539_update.cs" />
+    <Compile Include="Migrations\201906281811539_update.Designer.cs">
+      <DependentUpon>201906281811539_update.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Models\Ability.cs" />
+    <Compile Include="Models\AboutSpec.cs" />
+    <Compile Include="Models\Blog.cs" />
+    <Compile Include="Models\Comment.cs" />
+    <Compile Include="Models\HomeImage.cs" />
+    <Compile Include="Models\HomeViewModel.cs" />
+    <Compile Include="Models\Portfolio.cs" />
+    <Compile Include="Models\Position.cs" />
+    <Compile Include="Models\Post.cs" />
+    <Compile Include="Models\SecondBlog.cs" />
+    <Compile Include="Models\Service.cs" />
+    <Compile Include="Models\Setting.cs" />
+    <Compile Include="Models\Speciality.cs" />
+    <Compile Include="Models\Team.cs" />
+    <Compile Include="Models\Testimonial.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -248,7 +278,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Models\" />
+    <Folder Include="Views\Base\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
@@ -262,6 +292,17 @@
     <None Include="packages.config" />
     <Content Include="Scripts\jquery-3.3.1.slim.min.map" />
     <Content Include="Scripts\jquery-3.3.1.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201906281525211_create.resx">
+      <DependentUpon>201906281525211_create.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201906281603264_createTable.resx">
+      <DependentUpon>201906281603264_createTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201906281811539_update.resx">
+      <DependentUpon>201906281811539_update.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
