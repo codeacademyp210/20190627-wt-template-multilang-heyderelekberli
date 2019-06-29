@@ -1,0 +1,154 @@
+﻿@model WeekendTaskLanguage.Models.Setting
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Setting</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Phone)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Phone)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Email)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Email)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Feature)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Feature)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Hire)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Hire)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AbautUsText)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AbautUsText)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AboutUs)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AboutUs)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Services)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Services)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Testimonials)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Testimonials)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ContactUS)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ContactUS)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FacebookIcon)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FacebookIcon)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TwitterIcon)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TwitterIcon)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.InstagramIcon)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.InstagramIcon)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.LinkedinIcon)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LinkedinIcon)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ContactAddress)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ContactAddress)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ContactPhone)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ContactPhone)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ContactEmail)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ContactEmail)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Info)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Info)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.ID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

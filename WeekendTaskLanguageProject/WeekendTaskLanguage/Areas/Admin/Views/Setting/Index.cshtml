@@ -1,0 +1,125 @@
+﻿@model IEnumerable<WeekendTaskLanguage.Models.Setting>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Phone)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Email)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Feature)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Hire)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.AbautUsText)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.AboutUs)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Services)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Testimonials)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ContactUS)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FacebookIcon)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TwitterIcon)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.InstagramIcon)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.LinkedinIcon)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ContactAddress)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ContactPhone)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ContactEmail)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Info)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Phone)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Email)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Feature)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Hire)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.AbautUsText)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.AboutUs)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Services)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Testimonials)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ContactUS)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.FacebookIcon)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TwitterIcon)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.InstagramIcon)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.LinkedinIcon)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ContactAddress)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ContactPhone)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ContactEmail)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Info)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.ID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.ID }) |
+        </td>
+    </tr>
+}
+
+</table>
