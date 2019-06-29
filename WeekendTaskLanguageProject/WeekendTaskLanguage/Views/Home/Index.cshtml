@@ -58,27 +58,16 @@
     <section class="site-section">
         <div class="container">
             <div class="row">
-                <div class="col-md-6 col-lg-4">
-                    <div class="p-3 box-with-humber">
-                        <div class="number-behind">01.</div>
-                        <h2>Our Values</h2>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Et praesentium eos nulla qui commodi consectetur beatae fugiat. Veniam iste rerum perferendis.</p>
+                @foreach (var ab in Model.Ability)
+                {
+                    <div class="col-md-6 col-lg-4">
+                        <div class="p-3 box-with-humber">
+                            <div class="number-behind">@ab.Number</div>
+                            <h2>@ab.Title</h2>
+                            <p>@ab.Text</p>
+                        </div>
                     </div>
-                </div>
-                <div class="col-md-6 col-lg-4">
-                    <div class="p-3 box-with-humber">
-                        <div class="number-behind">02.</div>
-                        <h2>Our Mission</h2>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Et praesentium eos nulla qui commodi consectetur beatae fugiat. Veniam iste rerum perferendis.</p>
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-4">
-                    <div class="p-3 box-with-humber">
-                        <div class="number-behind">03.</div>
-                        <h2>Our Philosophy</h2>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Et praesentium eos nulla qui commodi consectetur beatae fugiat. Veniam iste rerum perferendis.</p>
-                    </div>
-                </div>
+                }
             </div>
         </div>
     </section>
@@ -87,41 +76,26 @@
             <div class="row mb-5 justify-content-center">
                 <div class="col-md-8 text-center">
                     <h2 class="text-black h1 site-section-heading text-center">Featured Projects</h2>
-                    <p class="lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores, itaque neque, delectus odio iure explicabo.</p>
+                    <p class="lead">@Model.Setting.Feature</p>
                 </div>
             </div>
         </div>
         <div class="container-fluid">
             <div class="row">
+                @foreach (var img in Model.HomeImage)
+                {
                 <div class="col-md-6 col-lg-4">
                     <a href="#" class="media-1">
-                        <img src="~/Public/images/img_1.jpg" alt="Image" class="img-fluid">
+                        <img src="~/Public/images/@img.Image" alt="@img.Title" class="img-fluid">
                         <div class="media-1-content">
-                            <h2>Project Name 1</h2>
-                            <span class="category">Web Application</span>
+                            <h2>@img.Title</h2>
+                            <span class="category">@img.Text</span>
                         </div>
                     </a>
                 </div>
-                <div class="col-md-6 col-lg-4">
-                    <a href="#" class="media-1">
-                        <img src="~/Public/images/img_2.jpg" alt="Image" class="img-fluid">
-                        <div class="media-1-content">
-                            <h2>Project Name 2</h2>
-                            <span class="category">Branding</span>
-                        </div>
-                    </a>
-                </div>
-                <div class="col-md-6 col-lg-4">
-                    <a href="#" class="media-1">
-                        <img src="~/Public/images/img_3.jpg" alt="Image" class="img-fluid">
-                        <div class="media-1-content">
-                            <h2>c</h2>
-                            <span class="category">Website</span>
-                        </div>
-                    </a>
-                </div>
+                }
                 <div class="col-12 text-center mt-5">
-                    <a href="work.html" class="btn btn-primary btn-md">Show All Works</a>
+                    <a href="@Url.Action("Index", "Work")" class="btn btn-primary btn-md">Show All Works</a>
                 </div>
             </div>
         </div>
@@ -135,50 +109,20 @@
             </div>
         </div>
         <div class="slide-one-item home-slider owl-carousel">
-            <div>
-                <div class="testimonial">
-                    <blockquote class="mb-5">
-                        <p>&ldquo;Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur unde reprehenderit aperiam quaerat fugiat repudiandae explicabo animi minima fuga beatae illum eligendi incidunt consequatur. Amet dolores excepturi earum unde iusto.&rdquo;</p>
-                    </blockquote>
-                    <figure class="mb-4 d-flex align-items-center justify-content-center">
-                        <div><img src="~/Public/images/person_3.jpg" alt="Image" class="w-50 img-fluid mb-3"></div>
-                        <p>John Smith</p>
-                    </figure>
+            @foreach (var test in Model.Testimonial)
+            {
+                <div>
+                    <div class="testimonial">
+                        <blockquote class="mb-5">
+                            <p>&ldquo;@test.Text&rdquo;</p>
+                        </blockquote>
+                        <figure class="mb-4 d-flex align-items-center justify-content-center">
+                            <div><img src="~/Public/images/@test.Image" alt="Image" class="w-50 img-fluid mb-3"></div>
+                            <p>@test.Name</p>
+                        </figure>
+                    </div>
                 </div>
-            </div>
-            <div>
-                <div class="testimonial">
-                    <blockquote class="mb-5">
-                        <p>&ldquo;Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur unde reprehenderit aperiam quaerat fugiat repudiandae explicabo animi minima fuga beatae illum eligendi incidunt consequatur. Amet dolores excepturi earum unde iusto.&rdquo;</p>
-                    </blockquote>
-                    <figure class="mb-4 d-flex align-items-center justify-content-center">
-                        <div><img src="~/Public/images/person_2.jpg" alt="Image" class="w-50 img-fluid mb-3"></div>
-                        <p>Christine Aguilar</p>
-                    </figure>
-                </div>
-            </div>
-            <div>
-                <div class="testimonial">
-                    <blockquote class="mb-5">
-                        <p>&ldquo;Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur unde reprehenderit aperiam quaerat fugiat repudiandae explicabo animi minima fuga beatae illum eligendi incidunt consequatur. Amet dolores excepturi earum unde iusto.&rdquo;</p>
-                    </blockquote>
-                    <figure class="mb-4 d-flex align-items-center justify-content-center">
-                        <div><img src="~/Public/images/person_4.jpg" alt="Image" class="w-50 img-fluid mb-3"></div>
-                        <p>Robert Spears</p>
-                    </figure>
-                </div>
-            </div>
-            <div>
-                <div class="testimonial">
-                    <blockquote class="mb-5">
-                        <p>&ldquo;Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur unde reprehenderit aperiam quaerat fugiat repudiandae explicabo animi minima fuga beatae illum eligendi incidunt consequatur. Amet dolores excepturi earum unde iusto.&rdquo;</p>
-                    </blockquote>
-                    <figure class="mb-4 d-flex align-items-center justify-content-center">
-                        <div><img src="~/Public/images/person_5.jpg" alt="Image" class="w-50 img-fluid mb-3"></div>
-                        <p>Bruce Rogers</p>
-                    </figure>
-                </div>
-            </div>
+            }
         </div>
     </section>
     <section class="site-section bg-light">
@@ -189,40 +133,25 @@
                 </div>
             </div>
             <div class="row">
-                <div class="col-md-6 col-lg-4 mb-4 mb-lg-4">
-                    <div class="h-entry">
-                        <img src="~/Public/images/img_1.jpg" alt="Image" class="img-fluid">
-                        <h2 class="font-size-regular"><a href="#">Create Beautiful Website In Less Than An Hour</a></h2>
-                        <div class="meta mb-4">Ham Brook <span class="mx-2">&bullet;</span> Jan 18, 2019<span class="mx-2">&bullet;</span> <a href="#">News</a></div>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus eligendi nobis ea maiores sapiente veritatis reprehenderit suscipit quaerat rerum voluptatibus a eius.</p>
-                        <p><a href="#">Continue Reading...</a></p>
+                @foreach (var blog in Model.Blog)
+                {
+                    <div class="col-md-6 col-lg-4 mb-4 mb-lg-4">
+                        <div class="h-entry">
+                            <img src="~/Public/images/@blog.Image" alt="@blog.Name" class="img-fluid">
+                            <h2 class="font-size-regular"><a href="#">@blog.Title1 @blog.Title2</a></h2>
+                            <div class="meta mb-4">@blog.Name<span class="mx-2">&bullet;</span>@blog.DataTime<span class="mx-2">&bullet;</span> <a href="#">@blog.News</a></div>
+                            <p>@blog.Text</p>
+                            <p><a href="#">@blog.Reading</a></p>
+                        </div>
                     </div>
-                </div>
-                <div class="col-md-6 col-lg-4 mb-4 mb-lg-4">
-                    <div class="h-entry">
-                        <img src="~/Public/images/img_2.jpg" alt="Image" class="img-fluid">
-                        <h2 class="font-size-regular"><a href="#">Create Beautiful Website In Less Than An Hour</a></h2>
-                        <div class="meta mb-4">James Phelps <span class="mx-2">&bullet;</span> Jan 18, 2019<span class="mx-2">&bullet;</span> <a href="#">News</a></div>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus eligendi nobis ea maiores sapiente veritatis reprehenderit suscipit quaerat rerum voluptatibus a eius.</p>
-                        <p><a href="#">Continue Reading...</a></p>
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-4 mb-4 mb-lg-4">
-                    <div class="h-entry">
-                        <img src="~/Public/images/img_1.jpg" alt="Image" class="img-fluid">
-                        <h2 class="font-size-regular"><a href="#">Create Beautiful Website In Less Than An Hour</a></h2>
-                        <div class="meta mb-4">James Phelps <span class="mx-2">&bullet;</span> Jan 18, 2019<span class="mx-2">&bullet;</span> <a href="#">News</a></div>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus eligendi nobis ea maiores sapiente veritatis reprehenderit suscipit quaerat rerum voluptatibus a eius.</p>
-                        <p><a href="#">Continue Reading...</a></p>
-                    </div>
-                </div>
+                }
             </div>
         </div>
     </section>
     <a href="#" class="bg-primary py-5 d-block">
         <div class="container">
             <div class="row justify-content-center">
-                <div class="col-md10"><h2 class="text-white">Hire Us &amp; Let's Get Started</h2></div>
+                <div class="col-md10"><h2 class="text-white">Hire Us & @Model.Setting.Hire</h2></div>
             </div>
         </div>
     </a>

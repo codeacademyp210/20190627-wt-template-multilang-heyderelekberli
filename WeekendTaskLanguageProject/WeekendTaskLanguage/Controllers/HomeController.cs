@@ -17,7 +17,6 @@ namespace WeekendTaskLanguage.Controllers
             models.Blog = db.Blogs.ToList();
             models.Comment = db.Comments.ToList();
             models.HomeImage = db.HomeImages.ToList();
-            models.Portfolio = db.Portfolios.ToList();
             models.Position = db.Positions.ToList();
             models.Post = db.Posts.ToList();
             models.SecondBlog = db.SecondBlogs.ToList();

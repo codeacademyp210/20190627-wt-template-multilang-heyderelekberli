@@ -21,5 +21,6 @@ namespace WeekendTaskLanguage.Models
         public List<Team> Team { get; set; }
         public List<Testimonial> Testimonial { get; set; }
         public Setting Setting { get; set; }
+        
     }
 }

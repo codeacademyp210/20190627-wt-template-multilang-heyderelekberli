@@ -149,6 +149,14 @@
     <Compile Include="Migrations\201906281811539_update.Designer.cs">
       <DependentUpon>201906281811539_update.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201906282127216_delete.cs" />
+    <Compile Include="Migrations\201906282127216_delete.Designer.cs">
+      <DependentUpon>201906282127216_delete.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201906282146385_updateImage.cs" />
+    <Compile Include="Migrations\201906282146385_updateImage.Designer.cs">
+      <DependentUpon>201906282146385_updateImage.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Ability.cs" />
     <Compile Include="Models\AboutSpec.cs" />
@@ -302,6 +310,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201906281811539_update.resx">
       <DependentUpon>201906281811539_update.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201906282127216_delete.resx">
+      <DependentUpon>201906282127216_delete.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201906282146385_updateImage.resx">
+      <DependentUpon>201906282146385_updateImage.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

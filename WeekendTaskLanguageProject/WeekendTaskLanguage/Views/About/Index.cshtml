@@ -1,4 +1,5 @@
-﻿
+﻿@model WeekendTaskLanguage.Models.HomeViewModel
+
 @{
     ViewBag.Title = "Index";
 }
@@ -29,26 +30,19 @@
                                 <h2 class="text-primary">Our Specialties</h2>
                             </div>
                         </div>
-                        <div class="col-md-12 mb-md-5 mb-0 col-lg-6">
-                            <div class="unit-4">
-                                <div class="unit-4-icon mr-4 mb-3"><span class="text-secondary icon-phonelink"></span></div>
-                                <div>
-                                    <h3>Web &amp; Mobile Specialties</h3>
-                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis quis consect.</p>
-                                    <p class="mb-0"><a href="#">Learn More</a></p>
+                        @foreach (var about in Model.AboutSpec)
+                        {
+                            <div class="col-md-12 mb-md-5 mb-0 col-lg-6">
+                                <div class="unit-4">
+                                    <div class="unit-4-icon mr-4 mb-3"><span class="text-secondary icon-@about.Icon"></span></div>
+                                    <div>
+                                        <h3>@about.Title</h3>
+                                        <p>@about.Text</p>
+                                        <p class="mb-0"><a href="#">Learn More</a></p>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="col-md-12 mb-md-5 mb-0 col-lg-6">
-                            <div class="unit-4">
-                                <div class="unit-4-icon mr-4 mb-3"><span class="text-secondary icon-extension"></span></div>
-                                <div>
-                                    <h3>Intuitive Thinkers</h3>
-                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis quis.</p>
-                                    <p class="mb-0"><a href="#">Learn More</a></p>
-                                </div>
-                            </div>
-                        </div>
+                        }
                     </div>
                 </div>
             </div>
@@ -62,52 +56,27 @@
                 </div>
             </div>
             <div class="row">
-                <div class="col-md-6 col-lg-4 mb-5 mb-lg-0" data-aos="fade" data-aos-delay="100">
-                    <div class="person">
-                        <img src="~/Public/images/person_2.jpg" alt="Image" class="img-fluid rounded-circle w-50 mb-5">
-                        <h3>Christine Rooster</h3>
-                        <p class="position text-muted">Co-Founder, President</p>
-                        <p class="mb-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi at consequatur unde molestiae quidem provident voluptatum deleniti quo iste error eos est praesentium distinctio cupiditate tempore suscipit inventore deserunt tenetur.</p>
-                        <ul class="ul-social-circle">
-                            <li><a href="#"><span class="icon-facebook"></span></a></li>
-                            <li><a href="#"><span class="icon-twitter"></span></a></li>
-                            <li><a href="#"><span class="icon-linkedin"></span></a></li>
-                            <li><a href="#"><span class="icon-instagram"></span></a></li>
-                        </ul>
+                @foreach (var team in Model.Team)
+                {
+                    <div class="col-md-6 col-lg-4 mb-5 mb-lg-0" data-aos="fade" data-aos-delay="100">
+                        <div class="person">
+                            <img src="~/Public/images/@team.Image" alt="@team.Name" class="img-fluid rounded-circle w-50 mb-5">
+                            <h3>@team.Name</h3>
+                            <p class="position text-muted">@team.Position</p>
+                            <p class="mb-4">@team.Text</p>
+                            <ul class="ul-social-circle">
+                                <li><a href="#"><span class="icon-@Model.Setting.FacebookIcon"></span></a></li>
+                                <li><a href="#"><span class="icon-@Model.Setting.TwitterIcon"></span></a></li>
+                                <li><a href="#"><span class="icon-@Model.Setting.InstagramIcon"></span></a></li>
+                                <li><a href="#"><span class="icon-@Model.Setting.LinkedinIcon"></span></a></li>
+                            </ul>
+                        </div>
                     </div>
-                </div>
-                <div class="col-md-6 col-lg-4 mb-5 mb-lg-0" data-aos="fade" data-aos-delay="200">
-                    <div class="person">
-                        <img src="~/Public/images/person_3.jpg" alt="Image" class="img-fluid rounded-circle w-50 mb-5">
-                        <h3>Brandon Sharp</h3>
-                        <p class="position text-muted">Co-Founder, COO</p>
-                        <p class="mb-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi at consequatur unde molestiae quidem provident voluptatum deleniti quo iste error eos est praesentium distinctio cupiditate tempore suscipit inventore deserunt tenetur.</p>
-                        <ul class="ul-social-circle">
-                            <li><a href="#"><span class="icon-facebook"></span></a></li>
-                            <li><a href="#"><span class="icon-twitter"></span></a></li>
-                            <li><a href="#"><span class="icon-linkedin"></span></a></li>
-                            <li><a href="#"><span class="icon-instagram"></span></a></li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-4 mb-5 mb-lg-0" data-aos="fade" data-aos-delay="300">
-                    <div class="person">
-                        <img src="~/Public/images/person_4.jpg" alt="Image" class="img-fluid rounded-circle w-50 mb-5">
-                        <h3>Connor Hodson</h3>
-                        <p class="position text-muted">Marketing</p>
-                        <p class="mb-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi at consequatur unde molestiae quidem provident voluptatum deleniti quo iste error eos est praesentium distinctio cupiditate tempore suscipit inventore deserunt tenetur.</p>
-                        <ul class="ul-social-circle">
-                            <li><a href="#"><span class="icon-facebook"></span></a></li>
-                            <li><a href="#"><span class="icon-twitter"></span></a></li>
-                            <li><a href="#"><span class="icon-linkedin"></span></a></li>
-                            <li><a href="#"><span class="icon-instagram"></span></a></li>
-                        </ul>
-                    </div>
-                </div>
+                }
             </div>
         </div>
     </div>
-    <section class="site-section testimonial-wrap" data-aos="fade">
+    <section class="site-section testimonial-wrap">
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-md-8 text-center">
@@ -116,56 +85,26 @@
             </div>
         </div>
         <div class="slide-one-item home-slider owl-carousel">
-            <div>
-                <div class="testimonial">
-                    <blockquote class="mb-5">
-                        <p>&ldquo;Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur unde reprehenderit aperiam quaerat fugiat repudiandae explicabo animi minima fuga beatae illum eligendi incidunt consequatur. Amet dolores excepturi earum unde iusto.&rdquo;</p>
-                    </blockquote>
-                    <figure class="mb-4 d-flex align-items-center justify-content-center">
-                        <div><img src="~/Public/images/person_3.jpg" alt="Image" class="w-50 img-fluid mb-3"></div>
-                        <p>John Smith</p>
-                    </figure>
+            @foreach (var test in Model.Testimonial)
+            {
+                <div>
+                    <div class="testimonial">
+                        <blockquote class="mb-5">
+                            <p>&ldquo;@test.Text&rdquo;</p>
+                        </blockquote>
+                        <figure class="mb-4 d-flex align-items-center justify-content-center">
+                            <div><img src="~/Public/images/@test.Image" alt="@test.Name" class="w-50 img-fluid mb-3"></div>
+                            <p>@test.Name</p>
+                        </figure>
+                    </div>
                 </div>
-            </div>
-            <div>
-                <div class="testimonial">
-                    <blockquote class="mb-5">
-                        <p>&ldquo;Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur unde reprehenderit aperiam quaerat fugiat repudiandae explicabo animi minima fuga beatae illum eligendi incidunt consequatur. Amet dolores excepturi earum unde iusto.&rdquo;</p>
-                    </blockquote>
-                    <figure class="mb-4 d-flex align-items-center justify-content-center">
-                        <div><img src="~/Public/images/person_2.jpg" alt="Image" class="w-50 img-fluid mb-3"></div>
-                        <p>Christine Aguilar</p>
-                    </figure>
-                </div>
-            </div>
-            <div>
-                <div class="testimonial">
-                    <blockquote class="mb-5">
-                        <p>&ldquo;Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur unde reprehenderit aperiam quaerat fugiat repudiandae explicabo animi minima fuga beatae illum eligendi incidunt consequatur. Amet dolores excepturi earum unde iusto.&rdquo;</p>
-                    </blockquote>
-                    <figure class="mb-4 d-flex align-items-center justify-content-center">
-                        <div><img src="~/Public/images/person_4.jpg" alt="Image" class="w-50 img-fluid mb-3"></div>
-                        <p>Robert Spears</p>
-                    </figure>
-                </div>
-            </div>
-            <div>
-                <div class="testimonial">
-                    <blockquote class="mb-5">
-                        <p>&ldquo;Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur unde reprehenderit aperiam quaerat fugiat repudiandae explicabo animi minima fuga beatae illum eligendi incidunt consequatur. Amet dolores excepturi earum unde iusto.&rdquo;</p>
-                    </blockquote>
-                    <figure class="mb-4 d-flex align-items-center justify-content-center">
-                        <div><img src="~/Public/images/person_5.jpg" alt="Image" class="w-50 img-fluid mb-3"></div>
-                        <p>Bruce Rogers</p>
-                    </figure>
-                </div>
-            </div>
+            }
         </div>
     </section>
     <a href="#" class="bg-primary py-5 d-block">
         <div class="container">
             <div class="row justify-content-center">
-                <div class="col-md10"><h2 class="text-white">Hire Us &amp; Let's Get Started</h2></div>
+                <div class="col-md10"><h2 class="text-white">Hire Us & @Model.Setting.Hire</h2></div>
             </div>
         </div>
     </a>

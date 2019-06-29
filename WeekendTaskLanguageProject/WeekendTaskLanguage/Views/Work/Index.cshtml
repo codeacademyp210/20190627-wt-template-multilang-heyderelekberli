@@ -1,4 +1,6 @@
-﻿\
+﻿@model WeekendTaskLanguage.Models.HomeViewModel
+
+
 @{
     ViewBag.Title = "Index";
 }
@@ -19,114 +21,18 @@
     <section class="site-section">
         <div class="container">
             <div class="row">
-                <div class="col-md-6 col-lg-4 mb-4">
-                    <a href="#" class="media-1">
-                        <img src="~/Public/images/img_1.jpg" alt="Image" class="img-fluid">
-                        <div class="media-1-content">
-                            <h2>Project Name 1</h2>
-                            <span class="category">Web Application</span>
-                        </div>
-                    </a>
-                </div>
-                <div class="col-md-6 col-lg-4 mb-4">
-                    <a href="#" class="media-1">
-                        <img src="~/Public/images/img_2.jpg" alt="Image" class="img-fluid">
-                        <div class="media-1-content">
-                            <h2>Project Name 2</h2>
-                            <span class="category">Branding</span>
-                        </div>
-                    </a>
-                </div>
-                <div class="col-md-6 col-lg-4 mb-4">
-                    <a href="#" class="media-1">
-                        <img src="~/Public/images/img_3.jpg" alt="Image" class="img-fluid">
-                        <div class="media-1-content">
-                            <h2>Project Name 3</h2>
-                            <span class="category">Website</span>
-                        </div>
-                    </a>
-                </div>
-                <div class="col-md-6 col-lg-4 mb-4">
-                    <a href="#" class="media-1">
-                        <img src="~/Public/images/img_4.jpg" alt="Image" class="img-fluid">
-                        <div class="media-1-content">
-                            <h2>Project Name 4</h2>
-                            <span class="category">Web Application</span>
-                        </div>
-                    </a>
-                </div>
-                <div class="col-md-6 col-lg-4 mb-4">
-                    <a href="#" class="media-1">
-                        <img src="~/Public/images/img_5.jpg" alt="Image" class="img-fluid">
-                        <div class="media-1-content">
-                            <h2>Project Name 5</h2>
-                            <span class="category">Branding</span>
-                        </div>
-                    </a>
-                </div>
-                <div class="col-md-6 col-lg-4 mb-4">
-                    <a href="#" class="media-1">
-                        <img src="~/Public/images/img_6.jpg" alt="Image" class="img-fluid">
-                        <div class="media-1-content">
-                            <h2>Project Name 6</h2>
-                            <span class="category">Website</span>
-                        </div>
-                    </a>
-                </div>
-                <div class="col-md-6 col-lg-4 mb-4">
-                    <a href="#" class="media-1">
-                        <img src="~/Public/images/img_1.jpg" alt="Image" class="img-fluid">
-                        <div class="media-1-content">
-                            <h2>Project Name 1</h2>
-                            <span class="category">Web Application</span>
-                        </div>
-                    </a>
-                </div>
-                <div class="col-md-6 col-lg-4 mb-4">
-                    <a href="#" class="media-1">
-                        <img src="~/Public/images/img_2.jpg" alt="Image" class="img-fluid">
-                        <div class="media-1-content">
-                            <h2>Project Name 2</h2>
-                            <span class="category">Branding</span>
-                        </div>
-                    </a>
-                </div>
-                <div class="col-md-6 col-lg-4 mb-4">
-                    <a href="#" class="media-1">
-                        <img src="~/Public/images/img_3.jpg" alt="Image" class="img-fluid">
-                        <div class="media-1-content">
-                            <h2>Project Name 3</h2>
-                            <span class="category">Website</span>
-                        </div>
-                    </a>
-                </div>
-                <div class="col-md-6 col-lg-4 mb-4">
-                    <a href="#" class="media-1">
-                        <img src="~/Public/images/img_4.jpg" alt="Image" class="img-fluid">
-                        <div class="media-1-content">
-                            <h2>Project Name 4</h2>
-                            <span class="category">Web Application</span>
-                        </div>
-                    </a>
-                </div>
-                <div class="col-md-6 col-lg-4 mb-4">
-                    <a href="#" class="media-1">
-                        <img src="~/Public/images/img_5.jpg" alt="Image" class="img-fluid">
-                        <div class="media-1-content">
-                            <h2>Project Name 5</h2>
-                            <span class="category">Branding</span>
-                        </div>
-                    </a>
-                </div>
-                <div class="col-md-6 col-lg-4 mb-4">
-                    <a href="#" class="media-1">
-                        <img src="~/Public/images/img_6.jpg" alt="Image" class="img-fluid">
-                        <div class="media-1-content">
-                            <h2>Project Name 6</h2>
-                            <span class="category">Website</span>
-                        </div>
-                    </a>
-                </div>
+                @foreach (var port in Model.Portfolio)
+                {
+                    <div class="col-md-6 col-lg-4 mb-4">
+                        <a href="#" class="media-1">
+                            <img src="~/Public/images/@port.Image" alt="@port.Title" class="img-fluid">
+                            <div class="media-1-content">
+                                <h2>@port.Title</h2>
+                                <span class="category">@port.Text</span>
+                            </div>
+                        </a>
+                    </div>
+                }
             </div>
         </div>
     </section>
@@ -139,49 +45,19 @@
             </div>
         </div>
         <div class="slide-one-item home-slider owl-carousel">
-            <div>
-                <div class="testimonial">
-                    <blockquote class="mb-5">
-                        <p>&ldquo;Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur unde reprehenderit aperiam quaerat fugiat repudiandae explicabo animi minima fuga beatae illum eligendi incidunt consequatur. Amet dolores excepturi earum unde iusto.&rdquo;</p>
-                    </blockquote>
-                    <figure class="mb-4 d-flex align-items-center justify-content-center">
-                        <div><img src="~/Public/images/person_3.jpg" alt="Image" class="w-50 img-fluid mb-3"></div>
-                        <p>John Smith</p>
-                    </figure>
+            @foreach (var test in Model.Testimonial)
+            {
+                <div>
+                    <div class="testimonial">
+                        <blockquote class="mb-5">
+                            <p>&ldquo;@test.Text&rdquo;</p>
+                        </blockquote>
+                        <figure class="mb-4 d-flex align-items-center justify-content-center">
+                            <div><img src="~/Public/images/@test.Image" alt="@test.Name" class="w-50 img-fluid mb-3"></div>
+                            <p>@test.Name</p>
+                        </figure>
+                    </div>
                 </div>
-            </div>
-            <div>
-                <div class="testimonial">
-                    <blockquote class="mb-5">
-                        <p>&ldquo;Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur unde reprehenderit aperiam quaerat fugiat repudiandae explicabo animi minima fuga beatae illum eligendi incidunt consequatur. Amet dolores excepturi earum unde iusto.&rdquo;</p>
-                    </blockquote>
-                    <figure class="mb-4 d-flex align-items-center justify-content-center">
-                        <div><img src="~/Public/images/person_2.jpg" alt="Image" class="w-50 img-fluid mb-3"></div>
-                        <p>Christine Aguilar</p>
-                    </figure>
-                </div>
-            </div>
-            <div>
-                <div class="testimonial">
-                    <blockquote class="mb-5">
-                        <p>&ldquo;Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur unde reprehenderit aperiam quaerat fugiat repudiandae explicabo animi minima fuga beatae illum eligendi incidunt consequatur. Amet dolores excepturi earum unde iusto.&rdquo;</p>
-                    </blockquote>
-                    <figure class="mb-4 d-flex align-items-center justify-content-center">
-                        <div><img src="~/Public/images/person_4.jpg" alt="Image" class="w-50 img-fluid mb-3"></div>
-                        <p>Robert Spears</p>
-                    </figure>
-                </div>
-            </div>
-            <div>
-                <div class="testimonial">
-                    <blockquote class="mb-5">
-                        <p>&ldquo;Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur unde reprehenderit aperiam quaerat fugiat repudiandae explicabo animi minima fuga beatae illum eligendi incidunt consequatur. Amet dolores excepturi earum unde iusto.&rdquo;</p>
-                    </blockquote>
-                    <figure class="mb-4 d-flex align-items-center justify-content-center">
-                        <div><img src="~/Public/images/person_5.jpg" alt="Image" class="w-50 img-fluid mb-3"></div>
-                        <p>Bruce Rogers</p>
-                    </figure>
-                </div>
-            </div>
+            }
         </div>
     </section>
