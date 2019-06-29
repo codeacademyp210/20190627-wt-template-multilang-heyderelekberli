@@ -1,4 +1,5 @@
-﻿@{
+﻿@model WeekendTaskLanguage.Models.HomeViewModel
+@{
     ViewBag.Title = "_Partial";
 }
 
@@ -36,16 +37,16 @@
                 <div class="row">
                     <div class="col-md-6">
                         <p class="mb-0">
-                            <span class="mr-3"><strong>Phone:</strong> <a href="tel://#">+1 292 3293 4238</a></span>
-                            <span><strong>Email:</strong> <a href="#"><span class="__cf_email__" data-cfemail="83eaede5ecc3faecf6f1e7eceee2eaedade0ecee">[email&#160;protected]</span></a></span>
+                            <span class="mr-3"><strong>Phone:</strong> <a href="tel://#">@ViewBag.Setting.Phone</a></span>
+                            <span><strong>Email:</strong> <a href="#"><span class="__cf_email__" data-cfemail="83eaede5ecc3faecf6f1e7eceee2eaedade0ecee">@ViewBag.Setting.Email</span></a></span>
                         </p>
                     </div>
                     <div class="col-md-6">
                         <ul class="social-media">
-                            <li><a href="#" class="p-2"><span class="icon-facebook"></span></a></li>
-                            <li><a href="#" class="p-2"><span class="icon-twitter"></span></a></li>
-                            <li><a href="#" class="p-2"><span class="icon-instagram"></span></a></li>
-                            <li><a href="#" class="p-2"><span class="icon-linkedin"></span></a></li>
+                            <li><a href="#" class="p-2"><span class="icon-@ViewBag.Setting.FacebookIcon"></span></a></li>
+                            <li><a href="#" class="p-2"><span class="icon-@ViewBag.Setting.TwitterIcon"></span></a></li>
+                            <li><a href="#" class="p-2"><span class="icon-@ViewBag.Setting.InstagramIcon"></span></a></li>
+                            <li><a href="#" class="p-2"><span class="icon-@ViewBag.Setting.LinkedinIcon"></span></a></li>
                         </ul>
                     </div>
                 </div>
@@ -90,23 +91,23 @@
                 <div class="row">
                     <div class="col-md-5">
                         <h2 class="footer-heading mb-4">About Us</h2>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque facere laudantium magnam voluptatum autem. Amet aliquid nesciunt veritatis aliquam.</p>
+                        <p>@ViewBag.Setting.AbautUsText</p>
                     </div>
                     <div class="col-md-3 ml-auto">
                         <h2 class="footer-heading mb-4">Features</h2>
                         <ul class="list-unstyled">
-                            <li><a href="#">About Us</a></li>
-                            <li><a href="#">Services</a></li>
-                            <li><a href="#">Testimonials</a></li>
-                            <li><a href="#">Contact Us</a></li>
+                            <li><a href="#">@ViewBag.Setting.AboutUs</a></li>
+                            <li><a href="#">@ViewBag.Setting.Services</a></li>
+                            <li><a href="#">@ViewBag.Setting.Testimonials</a></li>
+                            <li><a href="#">@ViewBag.Setting.ContactUS</a></li>
                         </ul>
                     </div>
                     <div class="col-md-3">
                         <h2 class="footer-heading mb-4">Follow Us</h2>
-                        <a href="#" class="pl-0 pr-3"><span class="icon-facebook"></span></a>
-                        <a href="#" class="pl-3 pr-3"><span class="icon-twitter"></span></a>
-                        <a href="#" class="pl-3 pr-3"><span class="icon-instagram"></span></a>
-                        <a href="#" class="pl-3 pr-3"><span class="icon-linkedin"></span></a>
+                        <a href="#" class="pl-0 pr-3"><span class="icon-@ViewBag.Setting.FacebookIcon"></span></a>
+                        <a href="#" class="pl-3 pr-3"><span class="icon-@ViewBag.Setting.TwitterIcon"></span></a>
+                        <a href="#" class="pl-3 pr-3"><span class="icon-@ViewBag.Setting.InstagramIcon"></span></a>
+                        <a href="#" class="pl-3 pr-3"><span class="icon-@ViewBag.Setting.LinkedinIcon"></span></a>
                     </div>
                 </div>
             </div>

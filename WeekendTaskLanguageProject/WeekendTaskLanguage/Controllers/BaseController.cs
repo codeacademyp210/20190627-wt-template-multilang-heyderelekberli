@@ -26,7 +26,8 @@ namespace WeekendTaskLanguage.Controllers
         protected Team Team;
         protected Testimonial Testimonial;
         protected Setting Setting;
-      
+
+
 
         protected BaseController()
         {
@@ -45,7 +46,8 @@ namespace WeekendTaskLanguage.Controllers
             Team = db.Teams.FirstOrDefault();
             Testimonial = db.Testimonials.FirstOrDefault();
             Setting = db.Settings.FirstOrDefault();
-         
+            ViewBag.Setting = db.Settings.FirstOrDefault();
+
         }
 
     }

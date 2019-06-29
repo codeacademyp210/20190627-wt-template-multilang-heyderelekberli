@@ -24,7 +24,7 @@ namespace WeekendTaskLanguage.Controllers
             models.Speciality = db.Specialities.ToList();
             models.Team = db.Teams.ToList();
             models.Testimonial = db.Testimonials.ToList();
-            models.Setting = Setting;
+            models.Setting =(Setting)Setting;
             return View(models);
       
         }
